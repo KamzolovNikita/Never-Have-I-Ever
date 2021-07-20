@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- MAIN FRAGMENT -->
+    <dimen name="height_fragment_main_top_line">7dp</dimen>
+    <dimen name="margin_fragment_main_images">12dp</dimen>
+
+    <dimen name="height_fragment_main_rules_image">44dp</dimen>
+    <dimen name="width_fragment_main_rules_image">65dp</dimen>
+
+    <dimen name="height_fragment_main_store_image">62dp</dimen>
+    <dimen name="width_fragment_main_store_image">55dp</dimen>
+
+    <dimen name="text_size_fragment_main_image_caption">12sp</dimen>
+
+    <dimen name="height_fragment_main_btn_game_selection">43dp</dimen>
+    <dimen name="margin_fragment_main_btn_game_selection_start_end">60dp</dimen>
+    <dimen name="margin_fragment_main_btn_game_selection_top">15dp</dimen>
+    <dimen name="text_size_fragment_main_btn_game_selection">14sp</dimen>
+
+    <!-- RULES FRAGMENT -->
+    <dimen name="margin_fragment_rules_views_start_end">16dp</dimen>
+
+    <dimen name="text_size_fragment_rules_header">26sp</dimen>
+    <dimen name="text_size_fragment_rules_default">15sp</dimen>
+
+    <!-- STORE FRAGMENT -->
+    <dimen name="margin_fragment_store_txt_restore_purchases_top">16dp</dimen>
+    <dimen name="margin_fragment_store_txt_restore_purchases_end">16dp</dimen>
+
+    <dimen name="text_size_fragment_store_header">26sp</dimen>
+    <dimen name="margin_fragment_store_header_start">16dp</dimen>
+
+    <dimen name="margin_fragment_store_rv_from_heading_top">10dp</dimen>
+
+    <!-- STORE ITEM -->
+    <dimen name="height_item_store_img_product">35dp</dimen>
+    <dimen name="width_item_store_img_product">27dp</dimen>
+    <dimen name="margin_item_store_img_product_start">8dp</dimen>
+
+    <dimen name="margin_item_store_header_top">8dp</dimen>
+    <dimen name="text_size_item_store_header">13sp</dimen>
+    <dimen name="text_size_item_store_price">17sp</dimen>
+    <dimen name="text_size_item_store_new_questions_counter">12sp</dimen>
+
+    <dimen name="margin_item_store_description_from_img_start">8dp</dimen>
+    <dimen name="margin_item_store_between_text">4dp</dimen>
+
+    <dimen name="padding_item_store_bottom">8dp</dimen>
+
+    <dimen name="height_item_store_btn_purchase">20dp</dimen>
+    <dimen name="width_item_store_btn_purchase">56dp</dimen>
+    <dimen name="margin_item_store_btn_purchase_end">8dp</dimen>
+    <dimen name="margin_item_store_btn_purchase_bottom">8dp</dimen>
+    <dimen name="text_size_item_store_btn_purchase">10sp</dimen>
+
+    <dimen name="margin_item_store_img_purchase_bottom">4dp</dimen>
+
+    <!-- GAME PREVIEW FRAGMENT -->
+    <dimen name="margin_fragment_game_preview_back_button_margin">16dp</dimen>
+    <dimen name="text_size_fragment_game_preview_header">16sp</dimen>
+    <dimen name="margin_fragment_game_preview_content">16dp</dimen>
+
+    <dimen name="padding_fragment_game_preview_img_primary">15dp</dimen>
+
+    <dimen name="height_fragment_game_preview_btn_start">47dp</dimen>
+    
+    
+    <!-- GAME FRAGMENT -->
+    <dimen name="padding_fragment_game_img_question">15dp</dimen>
+    <dimen name="margin_fragment_game_txt_questions_counter_from_logo">8dp</dimen>
+    <dimen name="text_size_fragment_game_question_counter">18sp</dimen>
+
+    <dimen name="margin_fragment_game_lower_layout">16dp</dimen>
+
+    <dimen name="height_fragment_game_btn_next_question">47dp</dimen>
+    <dimen name="margin_fragment_game_btn_next_question_bottom">16dp</dimen>
+    <dimen name="text_size_fragment_game_btn_next_question">18sp</dimen>
+    <dimen name="margin_fragment_game_question_frame_bottom">8dp</dimen>
+
+    <dimen name="margin_fragment_game_txt_question_start_end">15dp</dimen>
+    <dimen name="text_size_fragment_game_question">18sp</dimen>
+
+    <dimen name="width_fragment_game_btn_more_questions">128dp</dimen>
+    <dimen name="height_fragment_game_btn_more_questions">32dp</dimen>
+    <dimen name="text_size_fragment_game_btn_more_questions">14sp</dimen>
+
+    <dimen name="text_size_fragment_game_txt_start_over">18sp</dimen>
+    <dimen name="margin_fragment_game_txt_start_over_bottom">3dp</dimen>
+
+
+    <!-- ANY FRAGMENT -->
+    <dimen name="margin_btn_back_top">16dp</dimen>
+    <dimen name="margin_btn_back_start">16dp</dimen>
+
+    <dimen name="margin_from_btn_back_top">16dp</dimen>
+
+    <dimen name="text_size_txt_btn_back">16sp</dimen>
+</resources>

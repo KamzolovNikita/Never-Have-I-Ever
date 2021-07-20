@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="clickListener"
+            type="com.example.nhie.store.StoreItemListener" />
+        
+        <variable
+            name="storeItem"
+            type="com.example.nhie.store.StoreItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/item_store_cl_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/storescreen_element_shadow_dline">
+
+        <ImageView
+            android:id="@+id/item_store_img_product"
+            android:layout_width="@dimen/width_item_store_img_product"
+            android:layout_height="@dimen/height_item_store_img_product"
+            android:layout_marginStart="@dimen/margin_item_store_img_product_start"
+            android:contentDescription="@string/storescreen_nhie_logo_description"
+            app:itemImage="@{storeItem}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/storescreen_nhie2_logo" />
+
+        <TextView
+            android:id="@+id/item_store_txt_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_item_store_description_from_img_start"
+            android:layout_marginTop="@dimen/margin_item_store_header_top"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size_item_store_header"
+            app:layout_constraintStart_toEndOf="@+id/item_store_img_product"
+            app:layout_constraintTop_toTopOf="parent"
+            app:nameItemString="@{storeItem}"
+            tools:text="@string/storescreen_nhie2_heading" />
+
+        <TextView
+            android:id="@+id/item_store_txt_new_questions_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_item_store_between_text"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size_item_store_new_questions_counter"
+            app:layout_constraintStart_toStartOf="@+id/item_store_txt_header"
+            app:layout_constraintTop_toBottomOf="@+id/item_store_txt_header"
+            app:newQuestionsCounterString="@{storeItem}"
+            tools:text="@string/store_second_game_new_questions" />
+
+        <TextView
+            android:id="@+id/item_store_txt_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_item_store_between_text"
+            android:paddingBottom="@dimen/padding_item_store_bottom"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size_item_store_price"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/item_store_txt_new_questions_counter"
+            app:layout_constraintTop_toBottomOf="@+id/item_store_txt_new_questions_counter"
+            app:priceItemFormatted="@{storeItem}"
+            tools:text="@string/storescreen_nhie2_price" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/item_store_btn_purchase"
+            android:layout_width="@dimen/width_item_store_btn_purchase"
+            android:layout_height="@dimen/height_item_store_btn_purchase"
+            android:layout_marginEnd="@dimen/margin_item_store_btn_purchase_end"
+            android:layout_marginBottom="@dimen/margin_item_store_btn_purchase_bottom"
+            android:background="@drawable/storescreen_purchase_button"
+            android:stateListAnimator="@null"
+            android:text="@string/storescreen_purchase"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_item_store_btn_purchase"
+            android:onClick="@{() -> clickListener.onClick(storeItem)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_item_store_img_purchase_bottom"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toTopOf="@+id/item_store_btn_purchase"
+            app:layout_constraintEnd_toEndOf="@+id/item_store_btn_purchase"
+            app:layout_constraintStart_toStartOf="@+id/item_store_btn_purchase"
+            app:srcCompat="@drawable/ic_store" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

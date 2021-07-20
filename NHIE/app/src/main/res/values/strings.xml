@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">NHIE</string>
+    <string name="first_game_name">Я Никогда Не</string>
+    <string name="second_game_name">Я Никогда Не 2</string>
+    <string name="ny_game_name">Я Никогда Не. Новогоднее</string>
+    <string name="store_first_game_new_questions">120 вопросов (90 новых)</string>
+    <string name="store_second_game_new_questions">120 вопросов</string>
+    <string name="store_ny_game_new_questions">60 вопросов про Новый Год</string>
+    <string name="store_game_price">%1$s %2$s</string>
+    <string name="store_first_game_price">99,00 ₽</string>
+    <string name="store_second_game_price">179,00 ₽</string>
+    <string name="store_ny_game_price">99,00 ₽</string>
+
+    <string name="startscreen_button_nhie1">Я НИКОГДА НЕ</string>
+    <string name="startscreen_button_nhie2">Я НИКОГДА НЕ 2</string>
+    <string name="startscreen_button_nhie_ny">Я НИКОГДА НЕ НОВОГОДНЕЕ</string>
+    <string name="startscreen_store_text">магазин</string>
+    <string name="startscreen_rules_text">правила</string>
+    <string name="startscreen_main_image_descripriton">Startscreen_main_image</string>
+    <string name="startscreen_store_image_descripriton">Startscreen_store_image</string>
+    <string name="startscreen_rules_image_descripriton">Startscreen_rules_image</string>
+    <string name="startscreen_main_logo_descripriton">Startscreen_main_logo_image</string>
+    <string name="rulesscreen_back_button">❮ Назад</string>
+    <string name="rulesscreen_heading">Правила</string>
+    <string name="rulesscreen_rules">Игрокам предстоит по очереди
+                                     зачитывать вопрос, предваряя его фразой
+                                     «я никогда не» (например, «я никогда
+                                     не…занимался сексом в туалете»). В том
+                                     случае, если для кого-то из игроков эта
+                                     фраза не является правдой, (то есть он
+                                     совершал указанное действие), он
+                                     должен признаться в этом, например
+                                     выпив (сок, воду, чай и т.д.), либо можете
+                                     придумать свое правило.\n\nНапример,
+                                     если вы прочитали «Я никогда
+                                     не пробовал кошачью или собачью еду»,
+                                     все, кто хоть раз пробовал ее,
+                                     признаются.</string>
+    <string name="back_button">В Меню</string>
+    <string name="storescreen_restore_purchases">Восстановить покупки</string>
+    <string name="storescreen_heading">Магазин</string>
+    <string name="storescreen_nhie_heading">Я Никогда Не</string>
+    <string name="storescreen_nhie2_heading">Я Никогда Не 2</string>
+    <string name="storescreen_nhie_ny_heading">Я Никогда Не. Новогоднее</string>
+    <string name="storescreen_nhie_price">99,00 ₽</string>
+    <string name="storescreen_nhie2_price">179,00 ₽</string>
+    <string name="storescreen_nhie_ny_price">99,00 ₽</string>
+    <string name="storescreen_purchase">Купить</string>
+    <string name="storescreen_nhie_logo_description">Storescreen_nhie_logo_image</string>
+    <string name="previewscreen_heading_nhie1">Я Никогда Не</string>
+    <string name="previewscreen_heading_nhie2">Я Никогда Не 2</string>
+    <string name="previewscreen_heading_nhie_ny">Я Никогда Не Новогоднее</string>
+    <string name="previewscreen_startgame">Начать игру</string>
+    <string name="previewscreen_logo">Previewscreen_logo</string>
+    <string name="gamescreen_logo">Gamescreen_logo</string>
+    <string name="previewscreen_main_image">Previewscrren_main_image</string>
+    <string name="next_question">Следующий вопрос</string>
+    <string name="start_over">Начать Заново</string>
+    <string name="question_number_format">%d/%d</string>
+    <string name="more_question">Больше вопросов</string>
+    <string name="no_more_questions">Вопросов больше нет</string>
+</resources>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="gamePreviewViewModel"
+            type="com.example.nhie.preview.GamePreviewViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        tools:context=".MainActivity">
+
+        <LinearLayout
+            android:id="@+id/fragment_game_preview_llt_to_fit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/fragment_game_preview_txt_back"
+                style="@style/SystemText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_fragment_game_preview_back_button_margin"
+                android:onClick="@{() -> gamePreviewViewModel.onBackNavigate()}"
+                android:singleLine="true"
+                android:text="@string/back_button" />
+
+            <TextView
+                android:id="@+id/fragment_game_preview_txt_header"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_size_fragment_game_preview_header"
+                android:textStyle="bold"
+                tools:text="@string/previewscreen_heading_nhie_ny" />
+
+            <TextView
+                style="@style/SystemText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_fragment_game_preview_back_button_margin"
+                android:text="@string/back_button"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/margin_fragment_game_preview_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_game_preview_llt_to_fit">
+
+            <ImageView
+                android:id="@+id/fragment_game_preview_img_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="0.18"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/previewscreen_logo"
+                android:scaleType="centerCrop"
+                tools:srcCompat="@drawable/logo_nhie1" />
+
+            <ImageView
+                android:id="@+id/fragment_game_preview_img_primary"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="0.65"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/previewscreen_main_image"
+                android:padding="@dimen/padding_fragment_game_preview_img_primary"
+                tools:srcCompat="@drawable/questionimage_nhie_ny_light_1" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/fragment_game_preview_btn_start_game"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_fragment_game_preview_btn_start"
+                android:background="@drawable/startgamebutton_nhie1"
+                android:onClick="@{() -> gamePreviewViewModel.onGameNavigate()}"
+                android:stateListAnimator="@null"
+                android:text="@string/previewscreen_startgame"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="mainViewModel"
+            type="com.example.nhie.main.MainViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.6">
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/height_fragment_main_top_line"
+                android:background="@color/main_background_dark_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/fragment_main_img_store"
+                android:layout_width="@dimen/width_fragment_main_store_image"
+                android:layout_height="@dimen/height_fragment_main_store_image"
+                android:layout_marginStart="@dimen/margin_fragment_main_images"
+                android:contentDescription="@string/startscreen_store_image_descripriton"
+                android:onClick="@{() -> mainViewModel.onStoreNavigate()}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/startscreen_store" />
+
+            <TextView
+                android:id="@+id/fragment_main_txt_store"
+                style="@style/ImageCaptionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/startscreen_store_text"
+                app:layout_constraintEnd_toEndOf="@+id/fragment_main_img_store"
+                app:layout_constraintStart_toStartOf="@+id/fragment_main_img_store"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_main_img_store" />
+
+            <ImageView
+                android:id="@+id/fragment_main_img_rules"
+                android:layout_width="@dimen/width_fragment_main_rules_image"
+                android:layout_height="@dimen/height_fragment_main_rules_image"
+                android:layout_marginEnd="@dimen/margin_fragment_main_images"
+                android:contentDescription="@string/startscreen_rules_image_descripriton"
+                android:onClick="@{() -> mainViewModel.onRulesNavigate()}"
+                app:layout_constraintBottom_toTopOf="@+id/fragment_main_txt_rules"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/startscreen_rules" />
+
+            <TextView
+                android:id="@+id/fragment_main_txt_rules"
+                style="@style/ImageCaptionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/startscreen_rules_text"
+                app:layout_constraintBottom_toBottomOf="@+id/fragment_main_txt_store"
+                app:layout_constraintEnd_toEndOf="@+id/fragment_main_img_rules"
+                app:layout_constraintStart_toStartOf="@+id/fragment_main_img_rules" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/fragment_main_img_rules"
+                app:layout_constraintStart_toEndOf="@+id/fragment_main_img_store"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_main_txt_rules">
+
+                <ImageView
+                    android:layout_weight="2"
+                    android:id="@+id/fragment_main_img_primary"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="@dimen/margin_fragment_main_images"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/startscreen_main_image_descripriton"
+                    app:srcCompat="@drawable/storescreen_nhie_logo" />
+
+                <ImageView
+                    android:id="@+id/fragment_main_img_logo"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="@dimen/margin_fragment_main_images"
+                    android:layout_weight="1.5"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/startscreen_main_logo_descripriton"
+                    app:srcCompat="@drawable/startscreen_logo" />
+
+            </LinearLayout>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.4"
+            android:background="@color/main_background_dark_grey"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/fragment_main_btn_game_one"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_fragment_main_btn_game_selection"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/margin_fragment_main_btn_game_selection_start_end"
+                android:layout_marginTop="@dimen/margin_fragment_main_btn_game_selection_top"
+                android:layout_marginEnd="@dimen/margin_fragment_main_btn_game_selection_start_end"
+                android:background="@drawable/startscreen_button_nhie1"
+                android:contentDescription="@string/startscreen_button_nhie1"
+                android:onClick="@{() -> mainViewModel.onFirstGameNavigate()}"
+                android:stateListAnimator="@null"
+                android:text="@string/startscreen_button_nhie1"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_fragment_main_btn_game_selection" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/fragment_main_btn_game_two"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_fragment_main_btn_game_selection"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/margin_fragment_main_btn_game_selection_start_end"
+                android:layout_marginTop="@dimen/margin_fragment_main_btn_game_selection_top"
+                android:layout_marginEnd="@dimen/margin_fragment_main_btn_game_selection_start_end"
+                android:background="@drawable/startscreen_button_nhie2"
+                android:contentDescription="@string/startscreen_button_nhie2"
+                android:onClick="@{() -> mainViewModel.onSecondGameNavigate()}"
+                android:stateListAnimator="@null"
+                android:text="@string/startscreen_button_nhie2"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_fragment_main_btn_game_selection" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/fragment_main_btn_game_ny"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_fragment_main_btn_game_selection"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/margin_fragment_main_btn_game_selection_start_end"
+                android:layout_marginTop="@dimen/margin_fragment_main_btn_game_selection_top"
+                android:layout_marginEnd="@dimen/margin_fragment_main_btn_game_selection_start_end"
+                android:background="@drawable/startscreen_button_nhie_ny"
+                android:contentDescription="@string/startscreen_button_nhie_ny"
+                android:onClick="@{() -> mainViewModel.onNYGameNavigate()}"
+                android:stateListAnimator="@null"
+                android:text="@string/startscreen_button_nhie_ny"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_fragment_main_btn_game_selection" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

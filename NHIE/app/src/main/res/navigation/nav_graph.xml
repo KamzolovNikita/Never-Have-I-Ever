@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.nhie.main.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_gamePreviewFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_in_right"
+            app:destination="@id/gamePreviewFragment"
+            app:popUpTo="@id/mainFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_mainFragment_to_storeFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_in_right"
+            app:destination="@id/storeFragment"
+            app:popUpTo="@id/mainFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_mainFragment_to_rulesFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_in_right"
+            app:destination="@id/rulesFragment"
+            app:popUpTo="@id/mainFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/gamePreviewFragment"
+        android:name="com.example.nhie.preview.GamePreviewFragment"
+        android:label="GamePreviewFragment"
+        tools:layout="@layout/fragment_game_preview">
+        <action
+            android:id="@+id/action_gamePreviewFragment_to_gameFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_in_right"
+            app:destination="@id/gameFragment"
+            app:popUpTo="@id/gamePreviewFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="gameType"
+            app:argType="com.example.nhie.util.GameType" />
+    </fragment>
+    <fragment
+        android:id="@+id/storeFragment"
+        android:name="com.example.nhie.store.StoreFragment"
+        android:label="StoreFragment"
+        tools:layout="@layout/fragment_store"/>
+    <fragment
+        android:id="@+id/rulesFragment"
+        android:name="com.example.nhie.rules.RulesFragment"
+        android:label="RulesFragment"
+        tools:layout="@layout/fragment_rules"/>
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.example.nhie.game.GameFragment"
+        android:label="GameFragment"
+        tools:layout="@layout/fragment_game">
+        <argument
+            android:name="gameData"
+            app:argType="com.example.nhie.util.GameUICharacteristic" />
+    </fragment>
+</navigation>

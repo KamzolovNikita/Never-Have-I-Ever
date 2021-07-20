@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ImageCaptionText" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">@dimen/text_size_fragment_main_image_caption</item>
+    </style>
+
+    <style name="SystemText" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@color/system_text_blue</item>
+        <item name="android:textSize">@dimen/text_size_txt_btn_back</item>
+    </style>
+
+    <style name="TextHeader" parent="TextAppearance.AppCompat.Headline">
+        <item name="android:textSize">26sp</item>
+        <item name="color">@android:color/black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

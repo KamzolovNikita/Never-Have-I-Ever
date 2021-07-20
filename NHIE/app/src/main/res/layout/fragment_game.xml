@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="gameViewModel"
+            type="com.example.nhie.game.GameViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/fragment_game_txt_back"
+            style="@style/SystemText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_btn_back_start"
+            android:layout_marginTop="@dimen/margin_btn_back_top"
+            android:onClick="@{() -> gameViewModel.onBackNavigate()}"
+            android:text="@string/back_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_from_btn_back_top"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_game_txt_back">
+
+            <ImageView
+                android:id="@+id/fragment_game_img_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="0.18"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/gamescreen_logo"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/startscreen_logo" />
+
+            <TextView
+                android:id="@+id/fragment_game_txt_question_counter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_fragment_game_txt_questions_counter_from_logo"
+                android:text="@{@string/question_number_format(gameViewModel.curQuestionCounter, gameViewModel.maxQuestion)}"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_size_fragment_game_question_counter"
+                tools:text="0/60" />
+
+            <ImageView
+                android:id="@+id/fragment_game_img_question"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="0.32"
+                android:contentDescription="@string/previewscreen_main_image"
+                android:padding="@dimen/padding_fragment_game_img_question"
+                app:srcCompat="@drawable/questionimage_nhie1_light_30" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/margin_fragment_game_lower_layout"
+                android:layout_weight="0.25">
+
+                <View
+                    android:id="@+id/fragment_game_view_question_frame"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="@dimen/margin_fragment_game_question_frame_bottom"
+                    android:background="@drawable/questionframe_nhie1_light"
+                    app:layout_constraintBottom_toTopOf="@+id/fragment_game_btn_next_question"
+                    app:layout_constraintEnd_toEndOf="@+id/fragment_game_btn_next_question"
+                    app:layout_constraintStart_toStartOf="@+id/fragment_game_btn_next_question"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <TextView
+                    android:id="@+id/fragment_game_txt_question"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="@dimen/margin_fragment_game_txt_question_start_end"
+                    android:layout_marginEnd="@dimen/margin_fragment_game_txt_question_start_end"
+                    android:gravity="center"
+                    android:text="@{gameViewModel.curQuestionText}"
+                    android:textColor="@color/main_game_one_light_blue"
+                    android:textSize="@dimen/text_size_fragment_game_question"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/fragment_game_view_question_frame"
+                    app:layout_constraintEnd_toEndOf="@+id/fragment_game_view_question_frame"
+                    app:layout_constraintStart_toStartOf="@+id/fragment_game_view_question_frame"
+                    app:layout_constraintTop_toTopOf="@+id/fragment_game_view_question_frame"
+                    tools:text="Целовался впервые в жизни из-за игры в бутылочку (или любой другой подобной игры)" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/fragment_game_btn_next_question"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_fragment_game_btn_next_question"
+                    android:layout_marginBottom="@dimen/margin_fragment_game_btn_next_question_bottom"
+                    android:background="@drawable/nextquestion_button_nhie1_light"
+                    android:onClick="@{() -> gameViewModel.nextQuestion()}"
+                    android:stateListAnimator="@null"
+                    android:text="@string/next_question"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_size_fragment_game_btn_next_question"
+                    android:visibility="@{gameViewModel.isNoMoreQuestions ? View.INVISIBLE : View.VISIBLE}"
+                    app:layout_constraintBottom_toTopOf="@+id/fragment_game_txt_start_over"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/fragment_game_btn_no_more_questions"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_fragment_game_btn_next_question"
+                    android:layout_marginBottom="@dimen/margin_fragment_game_btn_next_question_bottom"
+                    android:alpha="0.7"
+                    android:background="@drawable/btn_no_more_questions"
+                    android:onClick="@{() -> gameViewModel.nextQuestion()}"
+                    android:stateListAnimator="@null"
+                    android:text="@string/no_more_questions"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_size_fragment_game_btn_next_question"
+                    android:visibility="@{gameViewModel.isNoMoreQuestions ? View.VISIBLE : View.GONE}"
+                    app:layout_constraintBottom_toTopOf="@+id/fragment_game_txt_start_over"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/fragment_game_txt_start_over"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_fragment_game_txt_start_over_bottom"
+                    android:onClick="@{() -> gameViewModel.restartGame()}"
+                    android:text="@string/start_over"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_size_fragment_game_txt_start_over"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/fragment_game_btn_more_questions"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/fragment_game_btn_more_questions"
+                    android:layout_width="@dimen/width_fragment_game_btn_more_questions"
+                    android:layout_height="@dimen/height_fragment_game_btn_more_questions"
+                    android:layout_gravity="end"
+                    android:background="@drawable/btn_more_questions"
+                    android:stateListAnimator="@null"
+                    android:text="@string/more_question"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_size_fragment_game_btn_more_questions"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/fragment_game_txt_start_over"
+                    tools:visibility="@{gameViewModel.isNoMoreQuestions ? View.VISIBLE : View.GONE}" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

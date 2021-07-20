@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="main_game_one_light_blue">#00AEEF</color>
+    <color name="main_game_one_hard_orange">#F15829</color>
+    <color name="main_game_two_light_green">#26AA49</color>
+    <color name="main_game_two_hard_pink">#EC4887</color>
+    <color name="main_game_ny_light_green">#37B54A</color>
+    <color name="main_game_ny_hard_orange">#F15829</color>
+
+    <color name="system_text_blue">#2D81DC</color>
+
+    <color name="main_background_dark_grey">#303030</color>
+
+    <color name="store_background_items_light_grey">#d5d3d6</color>
+
+    <color name="semi_transparent_white">#33FFFFFF</color>
+
+</resources>

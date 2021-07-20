@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="storeViewModel"
+            type="com.example.nhie.store.StoreViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/fragment_store_txt_back"
+            style="@style/SystemText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_btn_back_start"
+            android:layout_marginTop="@dimen/margin_btn_back_top"
+            android:onClick="@{() -> storeViewModel.onBackNavigate()}"
+            android:text="@string/back_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/fragment_store_txt_restore_purchases"
+            style="@style/SystemText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_fragment_store_txt_restore_purchases_top"
+            android:layout_marginEnd="@dimen/margin_fragment_store_txt_restore_purchases_end"
+            android:text="@string/storescreen_restore_purchases"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/fragment_store_txt_header"
+            style="@style/TextHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_fragment_store_header_start"
+            android:layout_marginTop="@dimen/margin_from_btn_back_top"
+            android:text="@string/storescreen_heading"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_store_txt_back" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fragment_store_rw_items_for_purchase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_fragment_store_rv_from_heading_top"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_store_txt_header"
+            tools:listitem="@layout/item_store"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
